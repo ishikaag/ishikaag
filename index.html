@@ -87,38 +87,7 @@
             text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.5);
         }
 
-        /* Apple-Style Download Resume Section */
-        .resume-container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-            backdrop-filter: blur(10px);
-        }
-
-        .resume-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .resume-title {
-            font-size: 30px;
-            font-weight: 700;
-            color: #1D1D1F;
-            margin-bottom: 15px;
-        }
-
-        .resume-text {
-            font-size: 20px;
-            color: #444;
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-        /* Apple-Inspired Button */
+        /* Apple-Inspired Button - No Extra Box */
         .download-button {
             padding: 16px 34px;
             font-size: 20px;
@@ -128,6 +97,7 @@
             border-radius: 30px;
             text-decoration: none;
             display: inline-block;
+            margin-top: 20px;
             transition: background 0.3s ease-in-out, transform 0.2s;
             box-shadow: 0 5px 20px rgba(0, 113, 227, 0.4);
         }
@@ -165,14 +135,10 @@
         <img src="ishika.png" alt="Ishika Agarwal">
         <h1>Ishika Agarwal</h1>
         <p>Senior Software Engineer | AWS Cloud Practitioner | Certified SAFe® 5 Practitioner</p>
-    </section>
 
-    <!-- Download Resume Section (Apple-Themed) -->
-    <div class="resume-container">
-        <h2 class="resume-title">Download My Resume</h2>
-        <p class="resume-text">Click the button below to get my latest resume.</p>
+        <!-- Download Resume Button (Standalone, No Extra Box) -->
         <a href="resume.pdf" class="download-button" download>Download Resume</a>
-    </div>
+    </section>
 
     <footer>
         <p>&copy; 2025 Ishika Agarwal</p>
