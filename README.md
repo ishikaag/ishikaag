@@ -1,7 +1,3 @@
-Here's your profile with a tech-themed GIF added for better visual appeal!  
-
----
-
 # Hi there, I'm Ishika Agarwal! 👋  
 
 ![Tech GIF](https://media.giphy.com/media/QTfX9Ejfra3ZmNxh6B/giphy.gif)  
@@ -48,6 +44,3 @@ I'm a passionate software engineer with expertise in designing and developing sc
 ## 🔗 Connect with Me  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ishika-agarwal/)  
 
----
-
-You can replace the GIF URL with any other tech-related GIF that matches your style! 🚀
