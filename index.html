@@ -12,31 +12,57 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            cursor: none; /* Hide default cursor */
         }
 
+        /* Background */
         body {
             background: url('background.jpg') center/cover no-repeat fixed;
             color: #1D1D1F;
+            text-align: center;
+            position: relative;
         }
 
-        /* Hero Section */
+        /* Large Blurred Glow Cursor */
+        .custom-cursor {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.2);  /* Dark for visibility */
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            backdrop-filter: blur(6px);
+            transition: transform 0.1s ease-out, background 0.2s ease-in-out;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Hover Effect - Expands on Interactive Elements */
+        a:hover, button:hover {
+            cursor: none;
+        }
+
+        a:hover ~ .custom-cursor, button:hover ~ .custom-cursor {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.3); /* Slightly darker on hover */
+        }
+
+        /* Hero Section (Apple Style) */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
             justify-content: center;
-            padding: 120px 20px;
-            height: 100vh;
-            position: relative;
+            height: 80vh;
+            padding: 20px;
         }
 
         .hero img {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid white;
+            border: 2px solid #D6D6D6;
             margin-bottom: 20px;
             transition: transform 0.3s ease-in-out;
         }
@@ -46,218 +72,131 @@
         }
 
         .hero h1 {
-            font-size: 38px;
-            font-weight: 600;
+            font-size: 46px;
+            font-weight: 700;
+            color: #1D1D1F; /* Dark text for contrast */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
         }
 
         .hero p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #666;
+            font-size: 22px;
+            color: #2C2C2E; /* Adjusted to be more visible */
+            margin-bottom: 25px;
+            font-weight: 500;
+            text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.5);
         }
 
-        /* Sections */
-        .container {
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 60px 20px;
-            background: rgba(245, 245, 247, 0.9);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            border-radius: 12px;
-            transition: transform 0.3s ease-in-out;
+        /* Apple-Style Download Resume Section */
+        .resume-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
             text-align: center;
+            transition: transform 0.3s ease-in-out;
+            backdrop-filter: blur(10px);
         }
 
-        .container:hover {
+        .resume-container:hover {
             transform: translateY(-5px);
         }
 
-        .section-title {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .skill {
-            background: #D6D6D6;
-            color: #333;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 16px;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .skill:hover {
-            background: #BEBEBE;
-        }
-
-        /* Experience Section */
-        .experience-item {
-            text-align: left;
-            margin-bottom: 40px;
-            padding: 20px;
-            background: rgba(245, 245, 247, 0.95);
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        .experience-item h3 {
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .experience-item p {
-            font-size: 16px;
-            color: #666;
+        .resume-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #1D1D1F;
             margin-bottom: 15px;
         }
 
-        .experience-item ul {
-            list-style-type: disc;
-            margin-left: 25px;
+        .resume-text {
+            font-size: 20px;
             color: #444;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .experience-item ul li {
-            margin-bottom: 10px;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 40px 20px;
-            background: rgba(245, 245, 247, 0.9);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .contact-title {
-            font-size: 26px;
-            color: #000;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .contact-text {
-            font-size: 18px;
-            color: #555;
             margin-bottom: 25px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .contact-button {
-            padding: 14px 28px;
-            font-size: 18px;
             font-weight: 500;
-            color: #333;
-            background: #E5E5E5;
-            border-radius: 25px;
+        }
+
+        /* Apple-Inspired Button */
+        .download-button {
+            padding: 16px 34px;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #0071E3, #005BB5);
+            border-radius: 30px;
             text-decoration: none;
+            display: inline-block;
             transition: background 0.3s ease-in-out, transform 0.2s;
+            box-shadow: 0 5px 20px rgba(0, 113, 227, 0.4);
         }
 
-        .contact-button:hover {
-            background: #D0D0D0;
+        .download-button:hover {
+            background: linear-gradient(135deg, #005BB5, #003A75);
+            box-shadow: 0 8px 25px rgba(0, 113, 227, 0.6);
         }
 
-        .contact-button:active {
-            transform: scale(0.95);
+        .download-button:active {
+            transform: scale(0.96);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 25px 0;
-            font-size: 14px;
-            color: #555;
-            background: rgba(245, 245, 247, 0.9);
-            border-top: 1px solid #ddd;
+            padding: 25px;
+            font-size: 16px;
+            color: #444;
+            background: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            font-weight: 500;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Hero Section (Apple-like Design) -->
     <section class="hero">
         <img src="ishika.png" alt="Ishika Agarwal">
         <h1>Ishika Agarwal</h1>
         <p>Senior Software Engineer | AWS Cloud Practitioner | Certified SAFe® 5 Practitioner</p>
     </section>
 
-    <!-- About Section -->
-    <div class="container" id="about">
-        <h2 class="section-title">About Me</h2>
-        <p>Experienced software professional skilled in designing and developing enterprise applications. Proficient in Java, Node.js, Spring Boot, React, and AWS.</p>
+    <!-- Download Resume Section (Apple-Themed) -->
+    <div class="resume-container">
+        <h2 class="resume-title">Download My Resume</h2>
+        <p class="resume-text">Click the button below to get my latest resume.</p>
+        <a href="resume.pdf" class="download-button" download>Download Resume</a>
     </div>
 
-    <!-- Skills Section -->
-    <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-            <span class="skill">Java</span>
-            <span class="skill">Spring Boot</span>
-            <span class="skill">React</span>
-            <span class="skill">AWS</span>
-            <span class="skill">Docker</span>
-            <span class="skill">Kubernetes</span>
-            <span class="skill">Jenkins</span>
-        </div>
-    </div>
-
-    <!-- Experience Section -->
-    <div class="container">
-        <h2 class="section-title">Experience</h2>
-    
-        <!-- CVS Health -->
-        <div class="experience-item">
-            <h3>Senior Software Engineer, CVS Health</h3>
-            <p><strong>Nov 2021 - Present</strong></p>
-            <ul>
-                <li>Architected enterprise-level microservices application for Specialty pharmacy, optimizing prescription tracking with <strong>Java EE, JavaScript, Spring MVC, Kubernetes, and Docker</strong>.</li>
-                <li>Innovated the <strong>Specialty Care Plan feature</strong>, reducing PCR call volumes and operational costs by up to <strong>$100 million</strong> through automation of frequent tasks.</li>
-                <li>Streamlined UI development by <strong>35%</strong> using <strong>React and Redux</strong> with a component-based architecture, leveraging React Hooks to improve code readability and reduce re-renders by <strong>30%</strong>.</li>
-                <li>Deployed <strong>Grafana and Prometheus</strong> for real-time monitoring, creating dashboards to track key microservice metrics (CPU, memory usage), improving performance visibility and reducing troubleshooting time.</li>
-                <li>Executed comprehensive unit testing with <strong>JUnit and Mockito</strong>, ensuring robust business logic and reducing defects by <strong>95%</strong>.</li>
-                <li>Monitored system health and incident response using <strong>Splunk</strong>, improving service reliability by <strong>25%</strong> and reducing on-call response times with proactive alerting and automated log analysis.</li>
-                <li>Redesigned the database schema using <strong>PostgreSQL and Flyway migrations</strong> to enhance data integrity and support advanced user analytics and reporting, receiving positive stakeholder feedback.</li>
-            </ul>
-        </div>
-    
-        <!-- Strategic Resources International -->
-        <div class="experience-item">
-            <h3>Full Stack Developer, Strategic Resources International</h3>
-            <p><strong>Sept 2020 - Oct 2021</strong></p>
-            <ul>
-                <li>Engineered an <strong>e-commerce platform</strong> for home services using <strong>Java, Spring MVC, React, and AWS Services</strong>, enhancing load times and scalability.</li>
-                <li>Architected <strong>RESTful APIs</strong> for backend functionalities, optimizing user registration and checkout processes, leading to a <strong>60% increase in user retention</strong>.</li>
-                <li>Designed and optimized <strong>MySQL database structures</strong> with Hibernate ORM, utilizing reader and writer nodes to <strong>reduce retrieval time by 90%</strong> and balance database load efficiently.</li>
-                <li>Orchestrated deployment on <strong>AWS (EC2, S3, RDS)</strong> using <strong>Ansible</strong> for configuration management and automation, ensuring high availability and robustness.</li>
-            </ul>
-        </div>
-    </div>
     <footer>
         <p>&copy; 2025 Ishika Agarwal</p>
     </footer>
+
+    <!-- JavaScript for Custom Cursor -->
+    <script>
+        const cursor = document.createElement("div");
+        cursor.classList.add("custom-cursor");
+        document.body.appendChild(cursor);
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        document.addEventListener("mousedown", () => {
+            cursor.style.transform = "scale(1.5)";
+        });
+
+        document.addEventListener("mouseup", () => {
+            cursor.style.transform = "scale(1)";
+        });
+    </script>
 
 </body>
 </html>
