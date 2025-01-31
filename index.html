@@ -149,6 +149,31 @@
             transform: scale(0.95);
         }
 
+        /* Apple-Inspired Button - No Extra Box */
+        .download-button {
+            padding: 16px 34px;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #0071E3, #005BB5);
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+            box-shadow: 0 5px 20px rgba(0, 113, 227, 0.4);
+        }
+
+        .download-button:hover {
+            background: linear-gradient(135deg, #005BB5, #003A75);
+            box-shadow: 0 8px 25px rgba(0, 113, 227, 0.6);
+        }
+
+        .download-button:active {
+            transform: scale(0.96);
+        }
+
+
         /* Footer */
         footer {
             text-align: center;
@@ -168,7 +193,6 @@
     <img src="ishika.png" alt="Ishika Agarwal">
     <h1>Ishika Agarwal</h1>
     <p>Senior Software Engineer | AWS Cloud Practitioner | Certified SAFe® 5 Practitioner</p>
-
     <!-- Download Resume Button (Standalone, No Extra Box) -->
     <a href="resume.pdf" class="download-button" download>Download Resume</a>
 </section>
